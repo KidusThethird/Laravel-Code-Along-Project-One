@@ -15,30 +15,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('listings');
-});
-
-
-Route::get('hello/', function () {
-    return response('<h4>Hello world2</h4>' , 200)
-    ->header('Content-Type', 'text/plain')
-    ->header('foo','bar');
-});
-
-
-
-
-Route :: get('/posts', function(){
-    return response()->json([
-        'posts'=>[
-            "title" => "Post One"
+    return view('listings',[
+        'heading'=> 'Latest Listings',
+        'listings' => [
+            [
+                'id' =>1,
+                'title'=> 'Listing One',
+                'description'=> 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, dolorum tempore. Ut molestiae recusandae, itaque, laudantium odio aperiam nihil velit in consectetur libero animi natus ullam quibusdam deserunt fugiat officia?'
+            ],
+            [
+                'id' =>2,
+                'title'=> 'Listing Two',
+                'description'=> 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, dolorum tempore. Ut molestiae recusandae, itaque, laudantium odio aperiam nihil velit in consectetur libero animi natus ullam quibusdam deserunt fugiat officia?'
+            ]
         ]
-        ]);
+    ]);
 });
 
-
-Route::get('/search', function (Request $request) {
-dd($request);
-
-  //  return response('welcome');
-});
