@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('listings');
 });
 
 
@@ -24,6 +25,20 @@ Route::get('hello/', function () {
     ->header('foo','bar');
 });
 
-Route::get('/posts/{id}', function ($id) {
-    return response('Post '.$id);
-})->where('id', '[0-9]+');
+
+
+
+Route :: get('/posts', function(){
+    return response()->json([
+        'posts'=>[
+            "title" => "Post One"
+        ]
+        ]);
+});
+
+
+Route::get('/search', function (Request $request) {
+dd($request);
+
+  //  return response('welcome');
+});
