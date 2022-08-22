@@ -1,8 +1,9 @@
 <?php
 
+use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\Listing;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +29,6 @@ Route::get('/', function () {
 Route::get('/listings/{id}', function($id){
     return view('listing',[
        
-        'listing'=> Listings::find($id)
+        'listing'=> Listing::find($id)
     ]);
 });
