@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\Listings;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,18 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('listings',[
         'heading'=> 'Latest Listings',
-        'listings' => [
-            [
-                'id' =>1,
-                'title'=> 'Listing One',
-                'description'=> 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, dolorum tempore. Ut molestiae recusandae, itaque, laudantium odio aperiam nihil velit in consectetur libero animi natus ullam quibusdam deserunt fugiat officia?'
-            ],
-            [
-                'id' =>2,
-                'title'=> 'Listing Two',
-                'description'=> 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, dolorum tempore. Ut molestiae recusandae, itaque, laudantium odio aperiam nihil velit in consectetur libero animi natus ullam quibusdam deserunt fugiat officia?'
-            ]
-        ]
+        'listings' => Listings::all()
     ]);
 });
 
