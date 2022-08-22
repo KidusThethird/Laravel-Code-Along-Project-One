@@ -7,8 +7,11 @@
 
 @foreach($listings as $listing)
     <h2>
-        {{$listing['title'];}}
+     <a href="/laravel/laravel_project_one/public/listings/{{$listing['id']}}"> 
+     
+     {{$listing['title'];}}
     </h2>
+</a>  
     <p>
         {{$listing['description'];}}
     </p>

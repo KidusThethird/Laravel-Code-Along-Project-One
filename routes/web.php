@@ -13,6 +13,8 @@ use App\Models\Listings;
 | contains the "web" middleware group. Now create something great!
 |
 */
+ 
+//all listings
 
 Route::get('/', function () {
     return view('listings',[
@@ -21,3 +23,11 @@ Route::get('/', function () {
     ]);
 });
 
+//single listing
+
+Route::get('/listings/{id}', function($id){
+    return view('listing',[
+       
+        'listing'=> Listings::find($id)
+    ]);
+});
