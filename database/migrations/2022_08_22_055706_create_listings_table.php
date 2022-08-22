@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('listings', function (Blueprint $table) {
             $table->id();
+            $table->String('title');
+            $table->String('tags');
+            $table->String('company');
+            $table->String('location');
+            $table->String('email');
+            $table->String('website');
+            $table->LongText('description');
+            
             $table->timestamps();
         });
     }
